@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hệ thống cửa hàng - DJI Vietnam</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f5f5;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .top-bar {
+      background-color: #1a1a1a;
+      color: #fff;
+      padding: 8px 0;
+      font-size: 13px;
+    }
+
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .header {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 15px 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-text {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    .logo-subtitle {
+      font-size: 12px;
+      color: #ff6b35;
+      font-weight: 600;
+    }
+
+    .nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-item {
+      font-weight: 500;
+      color: #333;
+      padding: 10px 0;
+      transition: color 0.3s;
+    }
+
+    .nav-item:hover {
+      color: #ff6b35;
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+      color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .page-header p {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    .stores-container {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .stores-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .store-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .store-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+
+    .store-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .store-card-content {
+      padding: 25px;
+    }
+
+    .store-card h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #1a1a1a;
+    }
+
+    .store-info {
+      margin-bottom: 10px;
+      display: flex;
+      gap: 10px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .store-info svg {
+      flex-shrink: 0;
+      color: #ff6b35;
+    }
+
+    .store-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 25px;
+      background: #1a1a1a;
+      color: #fff;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .store-btn:hover {
+      background: #ff6b35;
+    }
+
+    .footer {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 40px 0;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+      }
+
+      .page-header h1 {
+        font-size: 28px;
+      }
+
+      .stores-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="container">
+      <span>DJI Vietnam - Đại lý ủy quyền chính hãng</span>
+      <a href="index.html">Trang chủ</a>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="logo-text">DJI</span>
+        <span class="logo-subtitle">Vietnam</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-item">Trang chủ</a>
+        <a href="#" class="nav-item">Sản phẩm</a>
+        <a href="news.html" class="nav-item">Tin tức</a>
+        <a href="#" class="nav-item">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <h1>Hệ thống cửa hàng</h1>
+    <p>Showroom DJI chính hãng trên toàn quốc</p>
+  </div>
+
+  <div class="stores-container">
+    <div class="stores-grid">
+      <div class="store-card">
+        <img src="/placeholder.svg?height=200&width=500" alt="Store HCM">
+        <div class="store-card-content">
+          <h3>DJI Store - Quận 1, HCM</h3>
+          <div class="store-info">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>123 Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh</span>
+          </div>
+          <div class="store-info">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"></path>
+            </svg>
+            <span>028 1234 5678</span>
+          </div>
+          <div class="store-info">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12,6 12,12 16,14"></polyline>
+            </svg>
+            <span>8:00 - 21:00 (Thứ 2 - Chủ nhật)</span>
+          </div>
+          <a href="#" class="store-btn">Xem bản đồ</a>
+        </div>
+      </div>
+
+      <div class="store-card">
+        <img src="/placeholder.svg?height=200&width=500" alt="Store HN">
+        <div class="store-card-content">
+          <h3>DJI Store - Cầu Giấy, Hà Nội</h3>
+          <div class="store-info">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>456 Xuân Thủy, Cầu Giấy, Hà Nội</span>
+          </div>
+          <div class="store-info">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"></path>
+            </svg>
+            <span>024 9876 5432</span>
+          </div>
+          <div class="store-info">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12,6 12,12 16,14"></polyline>
+            </svg>
+            <span>8:30 - 21:00 (Thứ 2 - Chủ nhật)</span>
+          </div>
+          <a href="#" class="store-btn">Xem bản đồ</a>
+        </div>
+      </div>
+
+      <div class="store-card">
+        <img src="/placeholder.svg?height=200&width=500" alt="Store DN">
+        <div class="store-card-content">
+          <h3>DJI Store - Hải Châu, Đà Nẵng</h3>
+          <div class="store-info">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>789 Nguyễn Văn Linh, Hải Châu, Đà Nẵng</span>
+          </div>
+          <div class="store-info">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"></path>
+            </svg>
+            <span>0236 123 4567</span>
+          </div>
+          <div class="store-info">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12,6 12,12 16,14"></polyline>
+            </svg>
+            <span>9:00 - 20:30 (Thứ 2 - Chủ nhật)</span>
+          </div>
+          <a href="#" class="store-btn">Xem bản đồ</a>
+        </div>
+      </div>
+
+      <div class="store-card">
+        <img src="/placeholder.svg?height=200&width=500" alt="Store CT">
+        <div class="store-card-content">
+          <h3>DJI Store - Ninh Kiều, Cần Thơ</h3>
+          <div class="store-info">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>321 30 Tháng 4, Ninh Kiều, Cần Thơ</span>
+          </div>
+          <div class="store-info">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"></path>
+            </svg>
+            <span>0292 765 4321</span>
+          </div>
+          <div class="store-info">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12,6 12,12 16,14"></polyline>
+            </svg>
+            <span>8:30 - 20:00 (Thứ 2 - Chủ nhật)</span>
+          </div>
+          <a href="#" class="store-btn">Xem bản đồ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 DJI Vietnam. Tất cả quyền được bảo lưu.</p>
+  </footer>
+
+</body>
+</html>
