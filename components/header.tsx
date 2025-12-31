@@ -43,7 +43,7 @@ export function Header() {
                 <span>Giỏ hàng ({cartItemsCount})</span>
               </button>
             </div>
-            <span className="text-muted-foreground font-medium">DigitalTech VietNam</span>
+            <span className="text-muted-foreground font-medium">DigitalTech Store</span>
           </div>
         </div>
       </div>

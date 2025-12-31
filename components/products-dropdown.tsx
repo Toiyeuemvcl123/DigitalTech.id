@@ -34,7 +34,8 @@ const categories = [
 
 export function ProductsDropdown() {
   return (
-    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[800px] rounded-lg border border-border bg-card p-6 shadow-xl">
+    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[800px] rounded-lg border border-border bg-card p-6 shadow-xl z-[100]
+    before:absolute before:-top-4 before:left-0 before:h-8 before:w-full before:content-[''] before:z-[-1]">
       <div className="grid grid-cols-3 gap-8">
         {categories.map((category) => (
           <div key={category.slug}>
@@ -74,7 +75,7 @@ export function ProductsDropdown() {
         />
         <div>
           <p className="text-xs text-muted-foreground">Sản phẩm bán chạy</p>
-          <p className="font-semibold text-foreground">DJI Mavic 3 Pro</p>
+          <p className="font-semibold text-foreground">DJI Mavic 3 Fuck</p>
           <p className="text-sm text-primary">52.990.000₫</p>
         </div>
       </div>
