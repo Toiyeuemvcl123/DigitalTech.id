@@ -36,12 +36,14 @@ export function Header() {
                 Hệ thống cửa hàng
               </Link>
               <button
-                onClick={() => setIsCartOpen(!isCartOpen)}
+                // onMouseEnter={() => setIsCartOpen(true)}
+                // onMouseLeave={() => setIsCartOpen(true)}   
                 className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
               >
                 <ShoppingCart className="h-4 w-4" />
-                <span>Giỏ hàng ({cartItemsCount})</span>
+                <a href="/cart-page"> <span>Giỏ hàng ({cartItemsCount})</span> </a>
               </button>
+
             </div>
             <span className="text-muted-foreground font-medium">DigitalTech Store</span>
           </div>
@@ -85,7 +87,8 @@ export function Header() {
                 onMouseLeave={() => setIsProductsOpen(false)}
               >
                 <button className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-muted-foreground transition-colors">
-                  Sản phẩm
+                  <a href="all-product">
+                  Sản phẩm </a>
                   <ChevronDown className="h-4 w-4" />
                 </button>
                 {isProductsOpen && <ProductsDropdown />}

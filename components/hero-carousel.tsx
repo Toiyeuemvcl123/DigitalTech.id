@@ -8,7 +8,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 const slides = [
   {
     id: 1,
-    title: "DJI Mavic 3 Pro",
+    title: "DJI Mavic hehe Pro",
     subtitle: "Flagship Triple-Camera Drone",
     description: "Hasselblad Camera System with 4/3 CMOS Sensor",
     image: "/dji-mavic-3-pro-drone-flying-in-scenic-mountain-la.jpg",
@@ -25,6 +25,14 @@ const slides = [
   {
     id: 3,
     title: "DJI Osmo Pocket 3",
+    subtitle: "Pocket-Sized Creator Cam",
+    description: "1-inch CMOS Sensor with Rotating Screen",
+    image: "/placeholder.svg?height=600&width=1200",
+    link: "/product/osmo-pocket-3",
+  },
+  {
+    id: 4,
+    title: "DJI HOHO 3",
     subtitle: "Pocket-Sized Creator Cam",
     description: "1-inch CMOS Sensor with Rotating Screen",
     image: "/placeholder.svg?height=600&width=1200",
