@@ -5,8 +5,14 @@ import { FeaturedCategories } from "@/components/featured-categories"
 import { ProductBanners } from "@/components/product-banners"
 import { ProductSection } from "@/components/product-section"
 import { NewsSection } from "@/components/news-section"
+import { supabase } from '@/lib/supabase'
 
-export default function HomePage() {
+export default async function HomePage() {
+  const { data: products, error } = await supabase
+    .from('products')
+    .select('id, name, price, original_price, img_url, badge')
+  if (error) return <div>Đã xảy ra lỗi: {error.message}</div> 
+  
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -15,88 +21,29 @@ export default function HomePage() {
         <HeroCarousel />
         <ProductBanners />
         <ProductSection
-          title="HẢ THỨ 1"
+          title="Flycam DJI"
           categorySlug="flycam"
-          products={[
-            {
-              id: "1",
-              name: "Đã thấy Mavic 3 Pro",
-              price: 52990000,
-              originalPrice: 55990000,
-              image: "/dji-mavic-3-pro-drone-aerial-photography.jpg",
-              badge: "Bestseller",
-            },
-            {
-              id: "2",
-              name: "DJI Mini 4 Pro",
-              price: 23990000,
-              image: "/dji-mini-4-pro-compact-drone.jpg",
-              badge: "New",
-            },
-            {
-              id: "3",
-              name: "DJI Air 3",
-              price: 32990000,
-              image: "/dji-air-3-drone-dual-camera.jpg",
-            },
-            {
-              id: "4",
-              name: "Sản Phẩm Avata 2",
-              price: 28990000,
-              image: "/dji-avata-2-fpv-drone.jpg",
-              badge: "Hot",
-            },
-            {
-              id: "10",
-              name: "Đã thấy Mavic 7 Pro",
-              price: 52990000,
-              originalPrice: 55990000,
-              image: "/dji-mavic-3-pro-drone-aerial-photography.jpg",
-              badge: "Bestseller",
-            },
-            {
-              id: "9",
-              name: "DJI Mini 6 Pro",
-              price: 23990000,
-              image: "/dji-mini-4-pro-compact-drone.jpg",
-              badge: "New",
-            },
-          ]}
-        />
+          products={products?.map((item) => ({
+            id: item.id,
+            name: item.name,
+            price: item.price,
+            originalPrice: item.original_price,
+            image: item.img_url || "/placeholder.jpg",
+            badge: item.badge,
+          }))}
+        />    
         <ProductSection
           title="Flycam DJI"
           categorySlug="flycam"
-          products={[
-            {
-              id: "1",
-              name: "Đã thấy Mavic 3 Pro",
-              price: 52990000,
-              originalPrice: 55990000,
-              image: "/dji-mavic-3-pro-drone-aerial-photography.jpg",
-              badge: "Bestseller",
-            },
-            {
-              id: "2",
-              name: "DJI Mini 4 Pro",
-              price: 23990000,
-              image: "/dji-mini-4-pro-compact-drone.jpg",
-              badge: "New",
-            },
-            {
-              id: "3",
-              name: "DJI Air 3",
-              price: 32990000,
-              image: "/dji-air-3-drone-dual-camera.jpg",
-            },
-            {
-              id: "4",
-              name: "Sản Phẩm Avata 2",
-              price: 28990000,
-              image: "/dji-avata-2-fpv-drone.jpg",
-              badge: "Hot",
-            },
-          ]}
-        />
+          products={products?.map((item) => ({
+            id: item.id,
+            name: item.name,
+            price: item.price,
+            originalPrice: item.original_price,
+            image: item.img_url || "/placeholder.jpg",
+            badge: item.badge,
+          }))}
+        />    
         <ProductSection
           title="Gimbal & Camera"
           categorySlug="gimbal"

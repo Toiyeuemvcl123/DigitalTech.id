@@ -12,59 +12,116 @@ export default function CheckoutPage() {
       <div className="max-w-6xl mx-auto">
         
         {/* PHẦN 1: GIỎ HÀNG (Hình 3) */}
-        <div className="bg-white p-6 rounded-lg shadow-sm border mb-8">
-          <div className="grid grid-cols-12 gap-4 border-b pb-4 mb-4 font-bold text-sm uppercase">
-            <div className="col-span-6">Sản phẩm</div>
-            <div className="col-span-2 text-center">Giá</div>
-            <div className="col-span-2 text-center">Số lượng</div>
-            <div className="col-span-2 text-right">Tạm tính</div>
+       <div className="bg-white p-4 md:p-6 rounded-lg shadow-sm border mb-8">
+            {/* Header: Chỉ hiển thị từ màn hình Tablet/Desktop trở lên */}
+            <div className="hidden md:grid grid-cols-12 gap-4 border-b pb-4 mb-4 font-bold text-sm uppercase">
+              <div className="col-span-6">Sản phẩm</div>
+              <div className="col-span-2 text-center">Giá</div>
+              <div className="col-span-2 text-center">Số lượng</div>
+              <div className="col-span-2 text-right">Tạm tính</div>
+            </div>
+
+            {/* Danh sách sản phẩm */}
+            <div className="divide-y divide-gray-100">
+              
+              {/* Sản phẩm 1 */}
+              <div className="py-4">
+                {/* Desktop Layout (Ẩn trên Mobile) */}
+                <div className="hidden md:grid grid-cols-12 gap-4 items-center">
+                  <div className="col-span-6 flex items-center gap-4">
+                    <button className="text-gray-400 border rounded-full w-6 h-6 flex items-center justify-center text-xs">×</button>
+                    <div className="w-20 h-20 flex-shrink-0">
+                      <img src="/dji-rc-2-remote-controller.jpg" alt="DJI RS4 Pro" className="w-full h-full object-contain" />
+                    </div>
+                    <span className="font-medium text-blue-600 text-sm">DJI RS4 Pro - Basic</span>
+                  </div>
+                  <div className="col-span-2 text-center font-bold">20.190.000₫</div>
+                  <div className="col-span-2 text-center">
+                    <div className="inline-flex border rounded">
+                      <button className="px-2 py-1 bg-gray-50 border-r">-</button>
+                      <input type="text" value="2" className="w-8 text-center bg-transparent outline-none" readOnly />
+                      <button className="px-2 py-1 bg-gray-50 border-l">+</button>
+                    </div>
+                  </div>
+                  <div className="col-span-2 text-right font-bold">40.380.000₫</div>
+                </div>
+
+                {/* Mobile Layout (Theo ảnh mẫu - Tối ưu chống tràn) */}
+                <div className="md:hidden flex items-start gap-3 relative w-full">
+                  <button className="absolute top-0 left-0 text-gray-300 border rounded-full w-5 h-5 flex items-center justify-center text-[10px] z-10">×</button>
+                  <div className="w-24 h-24 flex-shrink-0 ml-6">
+                    <img src="/dji-rc-2-remote-controller.jpg" alt="DJI RS4 Pro" className="w-full h-full object-contain" />
+                  </div>
+                  <div className="flex-1 min-w-0"> {/* min-w-0 giúp text không đẩy container ra ngoài */}
+                    <h3 className="font-medium text-blue-600 text-sm mb-1 leading-tight break-words">DJI RS4 Pro - Basic</h3>
+                    <p className="text-gray-500 text-xs mb-1">2 x</p>
+                    <p className="font-bold text-sm">20.190.000₫</p>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <div className="inline-flex border rounded-md overflow-hidden bg-white shadow-sm">
+                      <button className="px-2 py-1 bg-gray-50 text-xs">-</button>
+                      <div className="w-8 flex items-center justify-center text-xs border-x">2</div>
+                      <button className="px-2 py-1 bg-gray-50 text-xs">+</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Sản phẩm 2 */}
+              <div className="py-4">
+                {/* Desktop Layout */}
+                <div className="hidden md:grid grid-cols-12 gap-4 items-center">
+                  <div className="col-span-6 flex items-center gap-4">
+                    <button className="text-gray-400 border rounded-full w-6 h-6 flex items-center justify-center text-xs">×</button>
+                    <div className="w-20 h-20 flex-shrink-0">
+                      <img src="/dji-rc-2-remote-controller.jpg" alt="DJI Osmo" className="w-full h-full object-contain" />
+                    </div>
+                    <span className="font-medium text-blue-600 text-sm">DJI Osmo Action 5 Pro - Standard Combo</span>
+                  </div>
+                  <div className="col-span-2 text-center font-bold">9.190.000₫</div>
+                  <div className="col-span-2 text-center">
+                    <div className="inline-flex border rounded">
+                      <button className="px-2 py-1 bg-gray-50 border-r">-</button>
+                      <input type="text" value="1" className="w-8 text-center bg-transparent outline-none" readOnly />
+                      <button className="px-2 py-1 bg-gray-50 border-l">+</button>
+                    </div>
+                  </div>
+                  <div className="col-span-2 text-right font-bold">9.190.000₫</div>
+                </div>
+
+                {/* Mobile Layout */}
+                <div className="md:hidden flex items-start gap-3 relative w-full">
+                  <button className="absolute top-0 left-0 text-gray-300 border rounded-full w-5 h-5 flex items-center justify-center text-[10px] z-10">×</button>
+                  <div className="w-24 h-24 flex-shrink-0 ml-6">
+                    <img src="/dji-rc-2-remote-controller.jpg" alt="DJI Osmo" className="w-full h-full object-contain" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-medium text-blue-600 text-sm mb-1 leading-tight break-words">DJI Osmo Action 5 Pro - Standard Combo</h3>
+                    <p className="text-gray-500 text-xs mb-1">1 x</p>
+                    <p className="font-bold text-sm">8.360.000₫</p>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <div className="inline-flex border rounded-md overflow-hidden bg-white shadow-sm">
+                      <button className="px-2 py-1 bg-gray-50 text-xs">-</button>
+                      <div className="w-8 flex items-center justify-center text-xs border-x">1</div>
+                      <button className="px-2 py-1 bg-gray-50 text-xs">+</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Nút bấm (Tối ưu Mobile) */}
+            <div className="flex flex-col md:flex-row gap-3 mt-6">
+              <button className="w-full md:w-auto px-4 py-3 border-2 border-black rounded-lg font-bold text-xs uppercase order-2 md:order-1 hover:bg-gray-50">
+                <a href="/all-product">← Tiếp tục xem sản phẩm</a>
+              </button>
+              <button className="w-full md:w-auto px-4 py-3 bg-gray-400 text-white rounded-lg font-bold text-xs uppercase order-1 md:order-2 cursor-not-allowed">
+                Cập nhật giỏ hàng
+              </button>
+            </div>
           </div>
 
-          {/* Sản phẩm 1 */}
-          <div className="grid grid-cols-12 gap-4 items-center border-b py-4">
-            <div className="col-span-6 flex items-center gap-4">
-              <button className="text-gray-400 border rounded-full w-6 h-6 flex items-center justify-center text-xs">×</button>
-              <div className="w-22 h-22 flex items-center justify-center p-2">
-                <img src="/dji-rc-2-remote-controller.jpg" alt="DJI RS4 Pro" className="object-contain" />
-              </div>
-              <span className="font-medium text-blue-600">DJI RS4 Pro - Basic</span>
-            </div>
-            <div className="col-span-2 text-center font-bold">20.190.000₫</div>
-            <div className="col-span-2 text-center">
-              <div className="inline-flex border rounded">
-                <button className="px-2 py-1 bg-gray-50 border-r">-</button>
-                <input type="text" value="2" className="w-8 text-center bg-transparent outline-none" readOnly />
-                <button className="px-2 py-1 bg-gray-50 border-l">+</button>
-              </div>
-            </div>
-            <div className="col-span-2 text-right font-bold">40.380.000₫</div>
-          </div>
-
-          {/* Sản phẩm 2 */}
-          <div className="grid grid-cols-12 gap-4 items-center border-b py-4">
-            <div className="col-span-6 flex items-center gap-4">
-              <button className="text-gray-400 border rounded-full w-6 h-6 flex items-center justify-center text-xs">×</button>
-              <div className="w-22 h-22 flex items-center justify-center p-2">
-                <img src="/dji-rc-2-remote-controller.jpg" alt="DJI Osmo" className="object-contain" />
-              </div>
-              <span className="font-medium text-blue-600">DJI Osmo Action 5 Pro - Standard Combo</span>
-            </div>
-            <div className="col-span-2 text-center font-bold">9.190.000₫</div>
-            <div className="col-span-2 text-center">
-              <div className="inline-flex border rounded">
-                <button className="px-2 py-1 bg-gray-50 border-r">-</button>
-                <input type="text" value="1" className="w-8 text-center bg-transparent outline-none" readOnly />
-                <button className="px-2 py-1 bg-gray-50 border-l">+</button>
-              </div>
-            </div>
-            <div className="col-span-2 text-right font-bold">9.190.000₫</div>
-          </div>
-
-          <div className="flex justify-between mt-6">
-            <button className="px-4 py-2 border rounded font-bold uppercase text-sm hover:bg-gray-50"> <a href="/all-product"> ← Tiếp tục xem sản phẩm </a> </button>
-            <button className="px-4 py-2 bg-gray-500 text-white rounded font-bold uppercase text-sm opacity-50 cursor-not-allowed">Cập nhật giỏ hàng</button>
-          </div>
-        </div>
 
         {/* PHẦN 2: THANH TOÁN (Hình 1 & 2) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">

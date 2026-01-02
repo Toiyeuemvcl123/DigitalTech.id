@@ -1,12 +1,22 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { ProductSection } from "@/components/product-section"
+import { supabase } from '@/lib/supabase'
 import Image from "next/image"
 
-export default function HowToBuyPage() {
+
+
+export default async function HowToBuyPage() {
+  const { data: products, error } = await supabase
+    .from('products')
+    .select('id, name, price, original_price, img_url, badge')
+  if (error) return <div>Đã xảy ra lỗi: {error.message}</div>  
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <main className="py-12">
+
         <article className="container mx-auto px-4 max-w-4xl flex flex-col items-center">
           
           {/* Tiêu đề chính viết hoa */}
@@ -53,8 +63,22 @@ export default function HowToBuyPage() {
             </div>
           </div>
         </article>
+
+        {/*<ProductSection
+          title="Flycam DJI"
+          categorySlug="flycam"
+          products={products?.map((item) => ({
+            id: item.id,
+            name: item.name,
+            price: item.price,
+            originalPrice: item.original_price,
+            image: item.img_url || "/placeholder.jpg",
+            badge: item.badge,
+          }))}
+        />    */}
+
       </main>
       <Footer />
-    </div>
+     </div>
   )
 }
