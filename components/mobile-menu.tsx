@@ -14,6 +14,7 @@ const menuItems = [
     name: "Sản phẩm",
     href: "/products",
     submenu: [
+      { name: "Tất cả sản phẩm", href: "/all-product" },
       { name: "Flycam", href: "/products/flycam" },
       { name: "Gimbal & Camera", href: "/products/gimbal" },
       { name: "Phụ kiện", href: "/products/accessories" },

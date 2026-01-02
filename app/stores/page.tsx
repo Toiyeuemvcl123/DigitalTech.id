@@ -5,34 +5,10 @@ import { MapPin, Phone, Clock } from "lucide-react"
 const stores = [
   {
     id: 1,
-    name: "DJI Store Hồ Chí Minh - Quận 1",
-    address: "123 Nguyễn Huệ, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh",
+    name: "DGT Store TP. Hà Nội - Phường Hai Bà Trưng",
+    address: "123 Tạ Quang Bửu, Phường Hai Bà Trưng, TP. Hà Nội",
     phone: "028 1234 5678",
     hours: "09:00 - 21:00",
-    image: "/placeholder.svg?height=300&width=500",
-  },
-  {
-    id: 2,
-    name: "DJI Store Hồ Chí Minh - Quận 7",
-    address: "456 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh",
-    phone: "028 2345 6789",
-    hours: "09:00 - 21:00",
-    image: "/placeholder.svg?height=300&width=500",
-  },
-  {
-    id: 3,
-    name: "DJI Store Hà Nội - Hoàn Kiếm",
-    address: "789 Phố Huế, Quận Hoàn Kiếm, Hà Nội",
-    phone: "024 3456 7890",
-    hours: "09:00 - 21:00",
-    image: "/placeholder.svg?height=300&width=500",
-  },
-  {
-    id: 4,
-    name: "DJI Store Đà Nẵng",
-    address: "321 Nguyễn Văn Linh, Quận Hải Châu, Đà Nẵng",
-    phone: "0236 456 7890",
-    hours: "09:00 - 20:00",
     image: "/placeholder.svg?height=300&width=500",
   },
 ]
@@ -43,8 +19,8 @@ export default function StoresPage() {
       <Header />
       <main className="py-8 md:py-12">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">Hệ thống cửa hàng</h1>
-          <p className="text-muted-foreground mb-8">Ghé thăm các cửa hàng DJI chính hãng trên toàn quốc</p>
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">Địa chỉ cửa hàng</h1>
+          <p className="text-muted-foreground mb-8">Ghé thăm cửa hàng DGT chính hãng tại TP. Hà Nội</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {stores.map((store) => (

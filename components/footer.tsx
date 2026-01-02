@@ -126,7 +126,7 @@ export function Footer() {
 
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t border-primary-foreground/20 text-center text-sm text-primary-foreground/60">
-          <p>© 2025 DJI Vietnam. All rights reserved.</p>
+          <p>© 2025 DGT Store. All rights reserved.</p>
         </div>
       </div>
     </footer>

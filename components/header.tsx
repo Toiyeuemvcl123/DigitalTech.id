@@ -33,7 +33,7 @@ export function Header() {
           <div className="flex h-9 items-center justify-between text-sm">
             <div className="flex items-center gap-6">
               <Link href="/stores" className="text-muted-foreground hover:text-foreground transition-colors">
-                Hệ thống cửa hàng
+                Địa chỉ cửa hàng
               </Link>
               <button
                 // onMouseEnter={() => setIsCartOpen(true)}
